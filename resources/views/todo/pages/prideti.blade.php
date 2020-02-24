@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
 <div class="site-section bg-light">
     <div class="container">
         @if($errors->any())
@@ -77,3 +78,4 @@
     </div>
 
 </div>
+@endsection

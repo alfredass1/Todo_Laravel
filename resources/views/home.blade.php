@@ -4,9 +4,11 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 offset-1">
+            <div class="col-sm-6 offset-3">
                 <table class="table">
                     <thead class="thead-dark">
+
+
                     <tr>
                         <th scope="col">Tema</th>
                         <th scope="col">Prioritetas</th>
@@ -21,7 +23,14 @@
 
                     @foreach($tasks as $task)
                         <tr>
-                            <td>{{$task->tema}}</td>
+
+                            <td><div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                       Žymėti
+                                    </label>
+                                </div></td>
+                            <td>{{$task->tema}}  </td>
                             <td>{{$task->prioritetas}}</td>
                             <td>{{$task->data}}</td>
                             <td>{{$task->statusas}}</td>
