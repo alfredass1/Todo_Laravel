@@ -19,13 +19,13 @@ Route::get('/', function () {
 
 Route::get('/lentele', 'TaskController@showTable')->name('lentele');
 Route::get('/prideti','TaskController@addTask');
-Route::POST('/store-task','TaskController@storeTask'); //metodas
+Route::POST('/store-task','TaskController@storeTask'); //uzklausa
 
-Route::Post('/edit-task/{task}', 'TaskController@edit_task'); //metodas
+Route::Post('/edit-task/{task}', 'TaskController@edit_task'); //uzklausa
 
 Route::get('/redaguoti/{task}', 'TaskController@editTask');
 
-Route::get('/delete-task/{task}','TaskController@deleteTask');
+Route::get('/delete-task/{task}','TaskController@deleteTask'); //uzklausa
 Route::get('/logout','HomeController@atsijungti');
 
 Auth::routes();
