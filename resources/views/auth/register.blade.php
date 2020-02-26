@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('todo.main')
 
 @section('content')
+@include('todo/_partials/bar')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

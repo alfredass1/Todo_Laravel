@@ -19,7 +19,8 @@ class CreateTasksTable extends Migration
             $table->string('prioritetas');
             $table->string('data');
             $table->string('statusas');
-            $table->decimal('redaguota');
+            $table->float('procentai');
+            $table->integer('userID');
             $table->timestamps();
         });
     }

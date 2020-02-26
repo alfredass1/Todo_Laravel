@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Gate;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +23,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
+        Gate::define('edit', function ($user, $task) {
+            return $user->id == $task->userID;
+
+        });
+
+        Gate::define('delete', function ($user, $task) {
+            return $user->id == $task->userID;
+
+        });
     }
 }

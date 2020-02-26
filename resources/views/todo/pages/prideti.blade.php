@@ -1,5 +1,6 @@
-@extends('layouts.app')
+@extends('todo.main')
 @section('content')
+@include('todo/_partials/bar')
 <div class="site-section bg-light">
     <div class="container">
         @if($errors->any())
@@ -15,7 +16,7 @@
         <form method="POST" action="/store-task" enctype="multipart/form-data">
             @csrf
             <div class="row justify-content-center">
-                <div class="col-md-7 mb-5"  data-aos="fade">
+                <div class="col-md-7 mb-5">
 
                     <h2 class="mb-5 text-black">Pridėkite užduotį</h2>
 
@@ -42,28 +43,23 @@
 
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <label class="text-black" for="subject">data</label>
-                            <input type="number" id="price" name="data" class="form-control">
-                        </div>
-                    </div>
-
-
-                    <div class="row form-group">
-                        <div class="col-md-12">
                             <label class="text-black" for="subject">Statusas</label>
                             <select class="form-control" name="status">
-                                <option>Baigtas</option>
+                                <option>Naujas</option>
                                 <option>Vykdomas</option>
+                                <option>Baigtas</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <label class="text-black" for="subject">Redaguota</label>
-                            <input type="number" id="location" name="edited" class="form-control">
-                        </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="subject">Progresas</label>
+                        <input type="number"  min="0" max="100" value="" id="subject" name="percent" class="form-control">
                     </div>
+                </div>
+
+
 
                     <div class="row form-group">
                         <div class="col-md-12">
@@ -76,6 +72,6 @@
             </div>
         </form>
     </div>
-
 </div>
+
 @endsection

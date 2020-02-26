@@ -12,12 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Auth::routes();
 
-Route::get('/home', 'TaskController@controlTask')->name('home');
+
+Route::get('/lentele', 'TaskController@showTable')->name('lentele');
 Route::get('/prideti','TaskController@addTask');
-Route::POST('/store-task','TaskController@storeTask');
+Route::POST('/store-task','TaskController@storeTask'); //metodas
+
+Route::Post('/edit-task/{task}', 'TaskController@edit_task'); //metodas
+
+Route::get('/redaguoti/{task}', 'TaskController@editTask');
+
+Route::get('/delete-task/{task}','TaskController@deleteTask');
 Route::get('/logout','HomeController@atsijungti');
+
+Auth::routes();
